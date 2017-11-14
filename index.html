@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<link rel="stylesheet" href="javascript.css">
+<title id = "title">Anas Ahmad</title>
+<link rel="icon" type="image/jpg" href=  "/Users/Anas/Desktop/Website/test.jpg">
+
+<style>
+body{
+        background-image: url("test.jpg");
+}
+ 
+</style>
+</head>
+<body id = "body" class = "body">
+
+<article id = "article1" class = "topArticle">
+
+<button id = "HomeButton" class = "button2" onclick="window.open('javascript.html', '_top')">Home</button>
+<button id = "button8" class = "button2" onclick="changeBack('body')">Button 8</button>
+<button id = "button9" class = "button2" onclick="changeBack('body')">Button 9</button>
+<button id = "button10" class = "button2" onclick="changeBack('body')">About</button>
+
+</article>
+
+<article class = "leftArticle">
+
+<button id = "testButton" class = "button1" onclick="window.open('test.html', '_top')">Test</button>
+<button id = "Twitter Button" class = "button1" onclick="window.open('http://www.twitter.com/anasahmadd')">Twitter</button>
+<button id = "button3" class = "button1" onclick="changeBack('body')">Button 3</button>
+<button id = "button4" class = "button1" onclick="changeBack('body')">Button 4</button>
+<button id = "button5" class = "button1" onclick="changeBack('body')">Button 5</button>
+<button id = "button6" class = "button1" onclick="changeBack('body')">Button 6</button>
+
+<!--<a class="twitter-timeline"  href="https://twitter.com/AnasAhmadd" data-widget-id="601073002411786240">Tweets by @AnasAhmadd</a>-->
+
+</article>
+
+
+<article class = "bottomArticle">
+
+<div class = "info1">
+<button id = "help" class = "button1">Help</button>
+</div>
+
+<div class = "info2">
+<button id = "help2" class = "button1">Help2</button>
+</div>
+
+<div class = "info3">
+<button id = "help3" class = "button1">Help3</button>
+</div>
+
+<div class = "info4">
+<button id = "help4" class = "button1">Help4</button>
+</div>
+
+</article>
+
+<script>
+
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+var checking = true;
+
+function changeName(id, changeTo)
+{
+	document.getElementById(id).innerHTML = changeTo;
+}
+
+function makeTrans(id){
+
+	document.getElementById(id).style.background = "transparent";
+
+}
+
+function changeBack(id){
+	
+	if(checking == true)
+	{
+		document.getElementById(id).style.transition = "all 2s";
+		document.getElementById(id).style.backgroundImage="url('test1.jpg')";
+		checking = false;
+	}
+
+	else if(checking == false)
+	{
+		document.getElementById(id).style.transition = "all 2s";
+		document.getElementById(id).style.backgroundImage="url('test.jpg')";
+		checking = true;
+	}
+}
+
+</script>
+
+</body>
+</html>

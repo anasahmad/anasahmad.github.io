@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready text-sm lg:text-base"
+  style="--bg: #faf6f1"
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Data Types in Go - Lorware</title>
+  <link rel="icon" href="../../layouts/favicon.ico">
+
+  
+  <meta name="theme-color" />
+  
+  <meta name="description" content="bool isEarthFlat := false var isEarthFlat bool isEarthFlat = false int &mdash; int8, int16, int32, int64 Note: number after int refers to the number of bits for that type - e.g int8 means 8 bit int (&#43;/- 2^8 - 1). int type is a signed integer with at least 32 bits size temperature := -10 planets := 8 var noOfPlanets int noOfPlanets = 8 var noOfEyes int8 noOfEyes = 3 uint &mdash; uint8, uint16, uint32, uint64 var noOfPlanets uint noOfPlanets = 8 var noOfEyes uint8 noOfEyes = 3 uintptr Note: uintptr is an integer type that is large enough to hold the bit pattern of any pointer." />
+  <meta
+    name="author"
+    content="Anas Ahmad"
+  />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://lorware.com/main.min.css" />
+
+  
+  <script
+    defer
+    src="https://lorware.com/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+   
+  <link rel="preload" as="image" href="https://lorware.com/theme.png" />
+
+  
+  
+  
+  
+
+  
+
+  
+  <link rel="icon" href="https://lorware.com/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://lorware.com/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.110.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Data Types in Go" />
+<meta property="og:description" content="bool isEarthFlat := false var isEarthFlat bool isEarthFlat = false int &mdash; int8, int16, int32, int64 Note: number after int refers to the number of bits for that type - e.g int8 means 8 bit int (&#43;/- 2^8 - 1). int type is a signed integer with at least 32 bits size temperature := -10 planets := 8 var noOfPlanets int noOfPlanets = 8 var noOfEyes int8 noOfEyes = 3 uint &mdash; uint8, uint16, uint32, uint64 var noOfPlanets uint noOfPlanets = 8 var noOfEyes uint8 noOfEyes = 3 uintptr Note: uintptr is an integer type that is large enough to hold the bit pattern of any pointer." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lorware.com/posts/go/data-types/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-20T14:12:55-06:00" />
+<meta property="article:modified_time" content="2023-02-20T14:12:55-06:00" />
+
+  
+  <meta itemprop="name" content="Data Types in Go">
+<meta itemprop="description" content="bool isEarthFlat := false var isEarthFlat bool isEarthFlat = false int &mdash; int8, int16, int32, int64 Note: number after int refers to the number of bits for that type - e.g int8 means 8 bit int (&#43;/- 2^8 - 1). int type is a signed integer with at least 32 bits size temperature := -10 planets := 8 var noOfPlanets int noOfPlanets = 8 var noOfEyes int8 noOfEyes = 3 uint &mdash; uint8, uint16, uint32, uint64 var noOfPlanets uint noOfPlanets = 8 var noOfEyes uint8 noOfEyes = 3 uintptr Note: uintptr is an integer type that is large enough to hold the bit pattern of any pointer."><meta itemprop="datePublished" content="2023-02-20T14:12:55-06:00" />
+<meta itemprop="dateModified" content="2023-02-20T14:12:55-06:00" />
+<meta itemprop="wordCount" content="401">
+<meta itemprop="keywords" content="Go," />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Data Types in Go"/>
+<meta name="twitter:description" content="bool isEarthFlat := false var isEarthFlat bool isEarthFlat = false int &mdash; int8, int16, int32, int64 Note: number after int refers to the number of bits for that type - e.g int8 means 8 bit int (&#43;/- 2^8 - 1). int type is a signed integer with at least 32 bits size temperature := -10 planets := 8 var noOfPlanets int noOfPlanets = 8 var noOfEyes int8 noOfEyes = 3 uint &mdash; uint8, uint16, uint32, uint64 var noOfPlanets uint noOfPlanets = 8 var noOfEyes uint8 noOfEyes = 3 uintptr Note: uintptr is an integer type that is large enough to hold the bit pattern of any pointer."/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-0.5 text-3xl font-bold"
+      href="https://lorware.com"
+      >Lorware</a
+    >
+    <a
+      class="btn-dark ml-6 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+    ></a>
+  </div>
+
+  <a
+    class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+  ></a>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = `"#faf6f1"`.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/contact/"
+        >Contact</a
+      >
+      
+    </nav>
+    
+
+    
+  </div>
+</header>
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pt-20 pb-32 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-20">
+    <h1 class="!my-0 pb-2.5">Data Types in Go</h1>
+
+    
+    <div class="text-sm opacity-60">
+      
+      <time>Feb 20, 2023</time>
+      
+      
+      <span class="mx-1">&middot;</span>
+      <span>Anas Ahmad</span>
+      
+    </div>
+    
+  </header>
+
+  <section><h2 id="bool">bool</h2>
+<pre tabindex="0"><code>isEarthFlat := false
+
+var isEarthFlat bool
+isEarthFlat = false
+</code></pre><h2 id="int-----int8-int16-int32-int64">int &mdash; int8, int16, int32, int64</h2>
+<h4 id="note-number-after-int-refers-to-the-number-of-bits-for-that-type---eg-int8-means-8-bit-int---28---1-int-type-is-a-signed-integer-with-at-least-32-bits-size">Note: number after int refers to the number of bits for that type - e.g int8 means 8 bit int (+/- 2^8 - 1). int type is a signed integer with at least 32 bits size</h4>
+<pre tabindex="0"><code>temperature := -10
+planets := 8
+
+var noOfPlanets int
+noOfPlanets = 8
+
+var noOfEyes int8
+noOfEyes = 3
+</code></pre><h2 id="uint-----uint8-uint16-uint32-uint64">uint &mdash; uint8, uint16, uint32, uint64</h2>
+<pre tabindex="0"><code>var noOfPlanets uint
+noOfPlanets = 8
+
+var noOfEyes uint8
+noOfEyes = 3
+</code></pre><h2 id="uintptr">uintptr</h2>
+<h4 id="note-uintptr-is-an-integer-type-that-is-large-enough-to-hold-the-bit-pattern-of-any-pointer">Note: uintptr is an integer type that is large enough to hold the bit pattern of any pointer.</h4>
+<h2 id="float-----float32-float64">float &mdash; float32, float64</h2>
+<h4 id="note-ieee-754-floating-point-numbers">Note: IEEE-754 floating-point numbers</h4>
+<pre tabindex="0"><code>temperature := -10.2
+
+var height float32
+height = 6.2042
+
+var size float64
+size = 4.23432423423421212312312131232132132132123
+</code></pre><h2 id="complex-----complex64-complex128">complex &mdash; complex64, complex128</h2>
+<h4 id="note-set-of-all-complex-numbers-with-float-real-and-imaginary-parts">Note: Set of all complex numbers with float real and imaginary parts</h4>
+<pre tabindex="0"><code>// 1 is float32, 2 is imaginary is the example below (1 + 2i)
+var comp1 complex64 = complex(1, 2)  
+
+// 4 is float32, -6 is imaginary is the example below (4 - 6i)
+var comp2 complex64 = complex(4, -6)  
+</code></pre><h2 id="string">string</h2>
+<pre tabindex="0"><code>empty := &#34;&#34;
+
+fruit := &#34;orange&#34;
+
+var color string
+color = &#34;blue&#34;
+</code></pre><h2 id="-array">[] (array)</h2>
+<h4 id="note-collection-of-data-types-including-struct-types">Note: Collection of data types including struct types</h4>
+<pre tabindex="0"><code>colors := []string{&#34;black&#34;, &#34;blue&#34;, &#34;green&#34;}
+
+var num [4]int
+num[0] = 123
+num[1] = 146
+num[2] = 158
+num[3] = 368
+
+type human struct{
+    name string
+    age int
+    height float32
+}
+
+humans := []human{
+    {
+        name: &#34;akhtar lava&#34;,
+        age: 50,
+        height: 5.92,
+    },
+    {
+        name: &#34;bruce wayne&#34;,
+        age: 123,
+        height: 6.12,
+    }
+}
+
+// appending to the array
+humans = append(humans, human{name:&#34;donald biden&#34;, age:212, height:12})
+</code></pre><h2 id="mapkv">map[k]v</h2>
+<h4 id="note-map-implementation-in-go---key-value-pairs">Note: map implementation in Go - Key Value Pairs</h4>
+<pre tabindex="0"><code>// map[key]value
+
+m := make(map[string]int)
+m[&#34;three&#34;] = 3
+m[&#34;apple] = 5
+
+// you can retrieve the value and if the key exists in the map
+value, exists := m[&#34;apple&#34;] // exists is true in this case, value is 5
+
+type human struct{
+    name string
+    age int
+    height float32
+}
+
+h := make(map[string]human)
+h[&#34;akhtar&#34;] = human{
+    name: &#34;akhtar&#34;,
+    age: 50,
+    height: 5.92,
+}
+</code></pre><h2 id="byte--int8">byte == int8</h2>
+<pre tabindex="0"><code>var b byte = 56
+</code></pre><h2 id="rune--int32">rune == int32</h2>
+<h4 id="note-used-by-convention-to-distinguish-character-values-from-integer-values">Note: used, by convention, to distinguish character values from integer values</h4>
+<pre tabindex="0"><code>alphabets := &#34;abcdefghijklmnopqrstuvwxyz&#34;
+for _, r := range alphabets {
+    // r is not a letter - it&#39;s the unicode value of the letter, type is rune
+    // for a, r == 97
+}
+</code></pre></section>
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mr-1.5 mb-1.5 rounded-lg bg-black/[3%] px-5 py-2 no-underline dark:bg-white/[8%]"
+      href="https://lorware.com/tags/go"
+      >Go</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 no-underline hover:bg-black/[2%]"
+      href="https://lorware.com/posts/go/oop/"
+      ><span class="mr-1.5">←</span><span>Object-Oriented Programming with Go</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 no-underline hover:bg-black/[2%]"
+      href="https://lorware.com/posts/go/interface/"
+      ><span>Interface in Go</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1440835523767631"
+        crossorigin="anonymous"></script>
+    <footer
+  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="https://lorware.com">Lorware</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >▷ Paper 6</a
+  >
+</footer>
+
+  </body>
+</html>

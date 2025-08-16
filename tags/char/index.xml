@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Char on Lorware</title>
+    <link>https://lorware.com/tags/char/</link>
+    <description>Recent content in Char on Lorware</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 21 Feb 2023 21:42:25 -0600</lastBuildDate><atom:link href="https://lorware.com/tags/char/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Char in Go</title>
+      <link>https://lorware.com/posts/go/go-char/</link>
+      <pubDate>Tue, 21 Feb 2023 21:42:25 -0600</pubDate>
+      
+      <guid>https://lorware.com/posts/go/go-char/</guid>
+      <description>Char in Go In Go, a character is represented by a single UTF-8 encoded Unicode code point. This is typically a 32-bit integer value, although for some code points it may be a 16-bit or 8-bit value.
+To declare a character variable in Go, we can use the rune type, which is an alias for the int32 type and is used to represent a single Unicode code point. For example:</description>
+    </item>
+    
+  </channel>
+</rss>

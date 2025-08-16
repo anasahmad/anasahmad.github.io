@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lorware</title>
+    <link>https://lorware.com/</link>
+    <description>Recent content on Lorware</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 19 Feb 2023 23:39:33 -0600</lastBuildDate><atom:link href="https://lorware.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Char in Go</title>
+      <link>https://lorware.com/posts/go/go-char/</link>
+      <pubDate>Tue, 21 Feb 2023 21:42:25 -0600</pubDate>
+      
+      <guid>https://lorware.com/posts/go/go-char/</guid>
+      <description>Char in Go In Go, a character is represented by a single UTF-8 encoded Unicode code point. This is typically a 32-bit integer value, although for some code points it may be a 16-bit or 8-bit value.
+To declare a character variable in Go, we can use the rune type, which is an alias for the int32 type and is used to represent a single Unicode code point. For example:</description>
+    </item>
+    
+    <item>
+      <title>Object-Oriented Programming with Go</title>
+      <link>https://lorware.com/posts/go/oop/</link>
+      <pubDate>Mon, 20 Feb 2023 14:13:50 -0600</pubDate>
+      
+      <guid>https://lorware.com/posts/go/oop/</guid>
+      <description>Object-Oriented Programming with Go Go is a language that was designed with a focus on simplicity and efficiency, and as such, it does not have built-in support for traditional object-oriented programming (OOP) concepts such as inheritance and polymorphism. However, Go does have some features that can be used to achieve similar functionality in a more flexible and lightweight way.
+The primary feature in Go that supports OOP-style programming is struct embedding.</description>
+    </item>
+    
+    <item>
+      <title>Data Types in Go</title>
+      <link>https://lorware.com/posts/go/data-types/</link>
+      <pubDate>Mon, 20 Feb 2023 14:12:55 -0600</pubDate>
+      
+      <guid>https://lorware.com/posts/go/data-types/</guid>
+      <description>bool isEarthFlat := false var isEarthFlat bool isEarthFlat = false int &amp;mdash; int8, int16, int32, int64 Note: number after int refers to the number of bits for that type - e.g int8 means 8 bit int (+/- 2^8 - 1). int type is a signed integer with at least 32 bits size temperature := -10 planets := 8 var noOfPlanets int noOfPlanets = 8 var noOfEyes int8 noOfEyes = 3 uint &amp;mdash; uint8, uint16, uint32, uint64 var noOfPlanets uint noOfPlanets = 8 var noOfEyes uint8 noOfEyes = 3 uintptr Note: uintptr is an integer type that is large enough to hold the bit pattern of any pointer.</description>
+    </item>
+    
+    <item>
+      <title>Interface in Go</title>
+      <link>https://lorware.com/posts/go/interface/</link>
+      <pubDate>Mon, 20 Feb 2023 14:07:33 -0600</pubDate>
+      
+      <guid>https://lorware.com/posts/go/interface/</guid>
+      <description>Interface defines a set of methods for a structure to implement. Implementation of an interface would implement the defined methods as per requirement type Car interface{ start() driveForward() stop() } First implementation - BMW 3 series type BMW3Series struct{ color string, automatic bool, } func (b *BMW3Series) start(){ //push button } func (b *BMW3Series) driveForward(){ //if start //if b.automatic move to drive //else push clutch change gear } func (b *BMW3Series) stop(){ //if start //push break and push button } Second implementation - Corolla 1998 type Corolla1998 struct{ color string, automatic bool, } func (b *Corolla1998) start(){ //insert key and twist clockwise } func (b *Corolla1998) driveForward(){ //if start //if b.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://lorware.com/contact/</link>
+      <pubDate>Mon, 20 Feb 2023 00:28:27 -0600</pubDate>
+      
+      <guid>https://lorware.com/contact/</guid>
+      <description> contact@lorware.com twitter </description>
+    </item>
+    
+    <item>
+      <title>Hash Set Implementation in Go</title>
+      <link>https://lorware.com/posts/go/go-set/</link>
+      <pubDate>Sun, 19 Feb 2023 23:13:16 -0600</pubDate>
+      
+      <guid>https://lorware.com/posts/go/go-set/</guid>
+      <description>In logic building, hashsets are an important data structure used for many applications. Go, currently, doesn&amp;rsquo;t have a hashset data type implementation A HashSet can easily be implemented using map by defining the value field as a boolean myset := map[T]bool{} //add - value is type T myset[value] = true // contains _, contains := myset[value] if contains { } //remove delete(myset, value) //size len(myset) Example Problem Common problem - Find if an element exists in a list if list contains apple, don&amp;rsquo;t buy apple fruitsInHouse := []string{&amp;#34;apple&amp;#34;, &amp;#34;banana&amp;#34;, &amp;#34;orange&amp;#34;, &amp;#34;peach&amp;#34;} // common solution - hint, it&amp;#39;s inefficient!</description>
+    </item>
+    
+  </channel>
+</rss>
